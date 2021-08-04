@@ -1,6 +1,6 @@
 import { filterParksForHiking } from '../Util/utilities';
 import { getParksByActivities } from '../Util/apiCalls';
-import { Parklist } from '../ParkList/ParkList';
+import ParkList from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
 import StatePicker from '../StatePicker/StatePicker';
 
@@ -39,12 +39,10 @@ const Home = () => {
   return(
     <main>
       <h2>homepage</h2>
-    
-        <StatePicker selectState={selectState}/> 
-      
-      
-      
-
+        {!parksByState.length ? 
+          <StatePicker selectState={selectState}/> :
+          <ParkList parksByState={parksByState}/>
+        }
     </main>
   )
 }
