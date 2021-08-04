@@ -1,12 +1,28 @@
+import ParkCard from '../ParkCard/ParkCard';
 import React from 'react';
 
+import './ParkList.css';
 
-const ParkList = () => {
 
+const ParkList = (props) => {
+
+    const parkCards = props.parksByState.map(park => {
+      return(
+        <ParkCard 
+          name={park.name}
+          designation={park.designation}
+          id={park.parkCode}
+          key={park.parkCode}
+        />
+      )
+
+    })
   return(
-    <h3>Park List by State </h3>
+    <section className='card-container'>
+      {parkCards}
+    </section>
   )
 }
 
 
-export default ParkList
+export default ParkList;
