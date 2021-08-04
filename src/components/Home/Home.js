@@ -1,3 +1,4 @@
+import { filterParksForHiking } from '../Util/utilities';
 import { getParksByActivities } from '../Util/apiCalls';
 import { Parklist } from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
@@ -6,7 +7,7 @@ import StatePicker from '../StatePicker/StatePicker';
 
 
 
-export const Home = () => {
+const Home = () => {
 
   const [parks, setParks] = useState([])
   const [parksByState, setParksByState] = useState([])
@@ -16,13 +17,14 @@ export const Home = () => {
   const getParkInfo = () => {
     getParksByActivities()
       .then(data => {
-        const parksWithHiking = data.data.find(activity => activity.name === 'Hiking')
-        setParks(parksWithHiking)
+       const hikeParks = filterParksForHiking(data)
+        setParks(hikeParks)
       })
   }
 
   useEffect(() =>{ 
     getParkInfo()
+    console.log(parks)
   },[])
 
   const selectState = (stateName) => {
@@ -37,13 +39,14 @@ export const Home = () => {
   return(
     <main>
       <h2>homepage</h2>
-      {!parksByState.length ?
-        <StatePicker selectState={selectState}/> :
-        <ParkList />
-      }
+    
+        <StatePicker selectState={selectState}/> 
+      
+      
       
 
     </main>
   )
 }
 
+export default Home;

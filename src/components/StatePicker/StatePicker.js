@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import USAMap from 'react-usa-map';
 
-export const StatePicker = (props) => {
+const StatePicker = (props) => {
 
   const mapHandler = (event) => {
     props.selectState(event.target.dataset.name)
@@ -13,4 +13,6 @@ export const StatePicker = (props) => {
     <USAMap onClick={mapHandler}/>
   )
 }
+
+export default StatePicker
 
