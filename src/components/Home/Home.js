@@ -1,15 +1,17 @@
+import { getParksByActivities } from '../Util/apiCalls';
+import { Parklist } from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
 import StatePicker from '../StatePicker/StatePicker';
 
 
-import { getParksByActivities } from '../Util/apiCalls';
 
 
-const Home = () => {
+export const Home = () => {
 
   const [parks, setParks] = useState([])
   const [parksByState, setParksByState] = useState([])
-
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState('')
 
   const getParkInfo = () => {
     getParksByActivities()
@@ -21,13 +23,11 @@ const Home = () => {
 
   useEffect(() =>{ 
     getParkInfo()
-    console.log(parks)
   },[])
 
   const selectState = (stateName) => {
     let parksInState = parks.parks.filter(park => park.states.includes(stateName))
     setParksByState(parksInState)
-    console.log(parksByState, 'inside')
   }
 
   console.log(parksByState, 'outside')
@@ -37,10 +37,13 @@ const Home = () => {
   return(
     <main>
       <h2>homepage</h2>
-      <StatePicker selectState={selectState}/>
+      {!parksByState.length ?
+        <StatePicker selectState={selectState}/> :
+        <ParkList />
+      }
+      
 
     </main>
   )
 }
 
-export default Home;
