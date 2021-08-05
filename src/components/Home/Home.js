@@ -1,8 +1,9 @@
 import { filterParksForHiking } from '../Util/utilities';
 import { getParksByActivities } from '../Util/apiCalls';
-import { Parklist } from '../ParkList/ParkList';
+import ParkList from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
 import StatePicker from '../StatePicker/StatePicker';
+import { Route, Switch } from 'react-router-dom';
 
 
 
@@ -24,7 +25,6 @@ const Home = () => {
 
   useEffect(() =>{ 
     getParkInfo()
-    console.log(parks)
   },[])
 
   const selectState = (stateName) => {
@@ -32,19 +32,13 @@ const Home = () => {
     setParksByState(parksInState)
   }
 
-  console.log(parksByState, 'outside')
-
- 
-
   return(
     <main>
       <h2>homepage</h2>
-    
-        <StatePicker selectState={selectState}/> 
-      
-      
-      
-
+        <Switch>
+          <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
+          <Route  path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
+        </Switch>
     </main>
   )
 }
