@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import ParkCard from '../ParkCard/ParkCard';
 import React from 'react';
 
-import './ParkList.css';
+import './ParkList.css'
 
 
 const ParkList = (props) => {
