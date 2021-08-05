@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ParkCard from '../ParkCard/ParkCard';
 import React from 'react';
 
@@ -19,6 +20,9 @@ const ParkList = (props) => {
     })
   return(
     <section className='card-container'>
+      <Link to='/'>
+        <button>go back</button>
+      </Link>
       {parkCards}
     </section>
   )
