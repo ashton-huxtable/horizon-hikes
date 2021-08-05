@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 import './ParkCard.css';
 
-const ParkCard = ({name, designation}) => {
+const ParkCard = ({name, designation, id}) => {
+
 
   return(
     <article className='park-card'>
       <h3>{name}</h3>
       <p>{designation}</p>
-      <button>More Info</button>
+      <Link to={`/details/${id}`}>
+        <button>More Info</button>
+      </Link>
     </article>
   )
 }

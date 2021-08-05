@@ -1,5 +1,6 @@
 import { filterParksForHiking } from '../Util/utilities';
 import { getParksByActivities } from '../Util/apiCalls';
+import ParkDetails from '../ParkDetails/ParkDetails';
 import ParkList from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
 import StatePicker from '../StatePicker/StatePicker';
@@ -38,6 +39,11 @@ const Home = () => {
         <Switch>
           <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
           <Route  path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
+          <Route path='/details/:parkCode' render={({match}) => {
+            const selectedPark = parksByState.find(park => park.parkCode === match.params.parkCode)
+            console.log(selectedPark)
+            return <ParkDetails selectedPark={selectedPark} />
+          }}/>
         </Switch>
     </main>
   )
