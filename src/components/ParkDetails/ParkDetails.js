@@ -2,6 +2,7 @@ import { filterParkDetails } from '../Util/utilities';
 import { getParkDetailsData } from '../Util/apiCalls';
 import React, { useState, useEffect }from 'react';
 import InfoCard from '../InfoCard/InfoCard';
+import SunriseSunset from '../SunriseSunset/SunriseSunset';
 
 
 const ParkDetails = ({selectedPark}) => {
@@ -27,6 +28,7 @@ const ParkDetails = ({selectedPark}) => {
           <h2>loading......</h2> :
          <InfoCard name={parkDetails.fullName} address={parkDetails.address} description={parkDetails.description}/>
         }
+        <SunriseSunset />
       </main>
     )
   }
