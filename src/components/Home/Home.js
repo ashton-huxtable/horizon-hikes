@@ -35,16 +35,14 @@ const Home = () => {
 
   return(
     <main>
-      <h2>homepage</h2>
-        <Switch>
-          <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
-          <Route  path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
-          <Route path='/details/:parkCode' render={({match}) => {
-            const selectedPark = parksByState.find(park => park.parkCode === match.params.parkCode)
-            console.log(selectedPark)
-            return <ParkDetails selectedPark={selectedPark} />
-          }}/>
-        </Switch>
+      <Switch>
+        <Route path='/details/:parkCode' render={({match}) => {
+          const selectedPark = parksByState.find(park => park.parkCode === match.params.parkCode)
+          return <ParkDetails selectedPark={selectedPark} />
+        }}/>
+        <Route path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
+        <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
+      </Switch>
     </main>
   )
 }
