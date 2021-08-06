@@ -5,7 +5,6 @@ const filterParksForHiking = (parksData) => {
 }
 
 const filterParkDetails = (parkDetailsData) => {
-  console.log(parkDetailsData, 'util')
 
   const {
     id,
@@ -25,7 +24,7 @@ const filterParkDetails = (parkDetailsData) => {
       'latitude': latitude,
       'longitude': longitude,
       'activities': activities,
-      'addresses': addresses,
+      'address': addresses[0],
       'images': images,
   }
   return filteredDetails
