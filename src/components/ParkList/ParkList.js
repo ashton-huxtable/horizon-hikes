@@ -20,9 +20,6 @@ const ParkList = (props) => {
     })
   return(
     <section className='card-container'>
-      <Link to='/'>
-        <button>go back</button>
-      </Link>
       {parkCards}
     </section>
   )
