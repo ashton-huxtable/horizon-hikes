@@ -30,4 +30,18 @@ const filterParkDetails = (parkDetailsData) => {
   return filteredDetails
 }
 
-export { filterParksForHiking, filterParkDetails }
+const filterSunriseSunsetData = (sunriseSunsetData) => {
+  const {
+    sunrise,
+    sunset
+  } = sunriseSunsetData.results
+
+  const filteredTimes = {
+    'sunrise': sunrise,
+    'sunset': sunset
+  }
+
+  return filteredTimes
+}
+
+export { filterParksForHiking, filterParkDetails, filterSunriseSunsetData }
