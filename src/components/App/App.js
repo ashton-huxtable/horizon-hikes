@@ -1,7 +1,6 @@
-
-import './App.css';
-import { Link, NavLink } from 'react-router-dom';
 import Home from '../Home/Home';
+import { Link, NavLink } from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (

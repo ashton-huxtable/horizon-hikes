@@ -1,18 +1,19 @@
 import React from 'react';
-import TripCard from '../TripCard/TripCard';
+import { TripCard } from '../TripCard/TripCard';
 
 const FutureVisits = ({futureTrips}) => {
 
   const userTrips = futureTrips.map(trip => {
+    const {image, fullName, tripDate, sunRiseSet, id} = trip
       return(
         <TripCard 
-          image={trip.image}
-          name={trip.fullName}
-          date={trip.tripDate.tripDate}
-          sunrise={trip.sunRiseSet.sunrise}
-          sunset={trip.sunRiseSet.sunset}
-          id={trip.id}
-          key={trip.id}
+          image={image}
+          name={fullName}
+          date={tripDate.tripDate}
+          sunrise={sunRiseSet.sunrise}
+          sunset={sunRiseSet.sunset}
+          id={id}
+          key={id}
         />
       )
   })

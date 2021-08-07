@@ -1,10 +1,10 @@
 import { filterParkDetails } from '../Util/utilities';
 import { getParkDetailsData } from '../Util/apiCalls';
+import { InfoCard } from '../InfoCard/InfoCard';
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect }from 'react';
-import InfoCard from '../InfoCard/InfoCard';
-import SunriseSunset from '../SunriseSunset/SunriseSunset';
 import ParkActivities from '../ParkActivities/ParkActivities';
+import React, { useState, useEffect }from 'react';
+import SunriseSunset from '../SunriseSunset/SunriseSunset';
 
 
 const ParkDetails = ({selectedPark, addToFutureTrips}) => {
@@ -22,8 +22,6 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
   useEffect(() => {
     getDetails()
   }, [])
-
-  console.log(parkDetails)
 
     return(
       <main className='park-details'>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TripCard = ({image, name, date, sunrise, sunset}) => {
+export const TripCard = ({image, name, date, sunrise, sunset}) => {
 
   return(
     <article className='trip-card'>
@@ -13,7 +13,4 @@ const TripCard = ({image, name, date, sunrise, sunset}) => {
       </div>
     </article>
   )
-
 }
-
-export default TripCard;

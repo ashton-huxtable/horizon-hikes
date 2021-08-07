@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InfoCard = ({name, address, description, image}) => {
+export const InfoCard = ({name, address, description, image}) => {
 
   const {
     city,
@@ -19,5 +19,3 @@ const InfoCard = ({name, address, description, image}) => {
 
   )
 }
-
-export default InfoCard
