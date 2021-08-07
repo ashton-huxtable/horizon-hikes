@@ -34,7 +34,12 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
           !Object.keys(parkDetails).length ?
           <h2>loading......</h2> :
           <section>
-            <InfoCard name={parkDetails.fullName} address={parkDetails.address} description={parkDetails.description}/>
+            <section className='top'>
+              <InfoCard name={parkDetails.fullName} 
+                address={parkDetails.address} 
+                description={parkDetails.description}
+                image={parkDetails.images[0]}/>
+            </section>
             <SunriseSunset latitude={parkDetails.latitude} 
               longitude={parkDetails.longitude}
               fullName={parkDetails.fullName}
