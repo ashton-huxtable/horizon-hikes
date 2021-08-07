@@ -1,12 +1,14 @@
 .choose-state{
-  color: #CED8D6;
+  color: #EAEFEE;
+  margin: 0.5em;
+  text-align: center;
 }
 
 .us-state-map {
   flex-direction: row;
   height: 50vh;
   width: 100vw;
-  background-color: #254441;
+  background-color: #213133;
 }
 
 .outlines {
@@ -16,9 +18,13 @@
 
 path {
   pointer-events: all;
-  fill: white;
+  fill: #FFE1D7;
 }
 path:hover {
   opacity: 0.5;
   cursor: pointer;
 }
+
+/* blue D2E4EE */
+/*  champagne FFEBC2 */
+/* rose FFE1D7 */

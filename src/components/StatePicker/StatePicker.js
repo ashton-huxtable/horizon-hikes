@@ -12,7 +12,7 @@ const StatePicker = (props) => {
 
   return(
     <main>
-      <h2 className='choose-state'>Choose a State Below to Plan Your Trip! </h2>
+      <h2 className='choose-state'>Welcome to Horizon Hikes! Please choose a state below to start planing your trip! </h2>
       <Link to='/parksByState'>
         <USAMap onClick={mapHandler}/>
       </Link>
