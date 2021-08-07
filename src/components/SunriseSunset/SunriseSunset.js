@@ -6,16 +6,15 @@ import moment from 'moment';
 import 'react-calendar/dist/Calendar.css';
 
 
-const SunriseSunset = ({latitude, longitude}) => {
+const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, id}) => {
 
   const [dateState, setDateState] = useState(new Date())
   const [sunRiseSet, setSunRiseSet] = useState({})
+  const [newTrip, setNewtrip] = useState({})
 
   const changeDate = (e) => {
     setDateState(e)
   }
-
-  console.log(dateState)
 
   const getData = () => {
     const date = moment(dateState).format('YYYY-MM-DD')
@@ -30,7 +29,24 @@ const SunriseSunset = ({latitude, longitude}) => {
     getData()
   }, [dateState])
 
-  console.log(sunRiseSet, 'outside')
+  const submitTrip = () => {
+    const tripDate = moment(dateState).format('MMMM Do YYYY')
+    setNewtrip({'image': image, 
+      'fullName': fullName, 
+      'sunRiseSet': sunRiseSet, 
+      'tripDate': {tripDate}, 
+      'id': id})
+  } 
+
+  const addTrip = () => {
+    if (Object.keys(newTrip).length){
+      addToFutureTrips(newTrip)
+    }
+  }
+
+  useEffect(() => {
+    addTrip()
+  }, [newTrip])
 
   return(
     <section className='calendar-info'>
@@ -46,6 +62,7 @@ const SunriseSunset = ({latitude, longitude}) => {
       <section className='sunset'>
         <h5>Sunset: {sunRiseSet.sunset}</h5>
       </section>
+      <button onClick={submitTrip}>Add to Future Trips!</button>
     </section>
   )
 
