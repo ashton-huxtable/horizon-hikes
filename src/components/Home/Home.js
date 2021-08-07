@@ -5,6 +5,7 @@ import ParkList from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
 import StatePicker from '../StatePicker/StatePicker';
 import { Route, Switch } from 'react-router-dom';
+import FutureVisits from '../FutureVisits/FutureVisits';
 
 
 
@@ -45,8 +46,10 @@ const Home = () => {
           const selectedPark = parksByState.find(park => park.parkCode === match.params.parkCode)
           return <ParkDetails selectedPark={selectedPark} addToFutureTrips={addToFutureTrips} />
         }}/>
+        <Route path='/futureVisits' render={() => <FutureVisits futureTrips={futureTrips}/>} />
         <Route path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
         <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
+        
       </Switch>
     </main>
   )
