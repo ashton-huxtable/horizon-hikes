@@ -7,8 +7,7 @@ import SunriseSunset from '../SunriseSunset/SunriseSunset';
 import ParkActivities from '../ParkActivities/ParkActivities';
 
 
-
-const ParkDetails = ({selectedPark}) => {
+const ParkDetails = ({selectedPark, addToFutureTrips}) => {
 
   const [parkDetails, setParkDetails] = useState({});
 
@@ -24,29 +23,30 @@ const ParkDetails = ({selectedPark}) => {
     getDetails()
   }, [])
 
-  console.log(parkDetails.activities)
-
+  console.log(parkDetails)
 
     return(
       <main className='park-details'>
         <Link to='/parksByState'>
           <button>go back</button>
-
         </Link>
         {
           !Object.keys(parkDetails).length ?
           <h2>loading......</h2> :
-         <InfoCard name={parkDetails.fullName} address={parkDetails.address} description={parkDetails.description}/>
+          <section>
+            <InfoCard name={parkDetails.fullName} address={parkDetails.address} description={parkDetails.description}/>
+            <SunriseSunset latitude={parkDetails.latitude} 
+              longitude={parkDetails.longitude}
+              fullName={parkDetails.fullName}
+              image={parkDetails.images[0]}
+              id={parkDetails.id}
+              addToFutureTrips={addToFutureTrips}
+            />
+            <section className='activities'>
+              < ParkActivities activities={parkDetails.activities}/>
+            </section>
+          </section>
         }
-        <SunriseSunset latitude={parkDetails.latitude} longitude={parkDetails.longitude}/>
-
-        <section className='activities'>
-          {
-            !Object.keys(parkDetails).length ?
-            <h2>loading activities.... </h2> :
-          < ParkActivities activities={parkDetails.activities}/>
-          }
-        </section>
       </main>
     )
   }
