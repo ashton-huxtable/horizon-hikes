@@ -1,22 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 * {
   margin: 0;
+  font-family: 'Saira Condensed', sans-serif;
 }
 
 html {
   height: 100vh;
-  background-color: #254441;
+  background-color: #213133;
   margin: 0;
 }
 
 nav{
-  background-image: linear-gradient(#1F3836,#254441 );
-  height: 10vh;
+  background-image: linear-gradient(#0C1C1F,#213133 );
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 12vh;
   margin: 0;
 }
 
-h1 {
-  color: #E8EDEC;
-  margin: 0;
+.heading {
+  color: #EAEFEE;
+  align-self: center;
+  text-align: center;
+  font-size: 3em;
+}
+
+a {
+  height: 5vh;
+  margin-top: 1em;
 }
 
 

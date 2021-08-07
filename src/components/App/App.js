@@ -9,6 +9,7 @@ function App() {
       <Link to='/'>
         <h1 className='heading'>Horizon Hikes</h1>
       </Link>
+      <NavLink to='/futureVisits'>Future Trips</NavLink>
     </nav>
     <Home />
   </div>
