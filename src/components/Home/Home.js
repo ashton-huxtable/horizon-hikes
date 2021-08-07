@@ -13,6 +13,7 @@ const Home = () => {
 
   const [parks, setParks] = useState([])
   const [parksByState, setParksByState] = useState([])
+  const [futureTrips, setFutureTrips] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState('')
 
@@ -33,12 +34,16 @@ const Home = () => {
     setParksByState(parksInState)
   }
 
+  const addToFutureTrips = (trip) => {
+    setFutureTrips(allTrips =>[...allTrips, trip])
+  }
+
   return(
     <main>
       <Switch>
         <Route path='/details/:parkCode' render={({match}) => {
           const selectedPark = parksByState.find(park => park.parkCode === match.params.parkCode)
-          return <ParkDetails selectedPark={selectedPark} />
+          return <ParkDetails selectedPark={selectedPark} addToFutureTrips={addToFutureTrips} />
         }}/>
         <Route path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
         <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
