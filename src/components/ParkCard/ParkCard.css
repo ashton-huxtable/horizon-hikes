@@ -1,6 +1,50 @@
-.park-card {
-  border: 2px solid black;
-  height: 15vh;
-  width: 86vw;
 
+.name-des{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45vw;
+  margin-left: 0.5em;
+}
+
+.park-card {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #DFE0E2 ;
+  display: flex;
+  justify-content: space-between;
+  height: 14vh;
+  width: 90vw;
+  margin-left: 5vw;
+  border-radius: 0.5em;
+}
+
+.park-card-des{
+  font-size: 1.5em;
+  color: black;
+}
+
+.park-card-img{
+  align-self: center;
+  height: 6em;
+  width: 6em;
+  border-radius: 1em;
+  border: 2px solid #254441;
+  margin-left: 0.3em;
+}
+
+.park-card-name{
+  font-size: 1.5em;
+  color: black;
+}
+
+.more-info {
+  align-self: center;
+  background-color: #213133;
+  color: white;
+  margin: 1em 0.7em 0 0;
+  height: 3em;
+  width: 4em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1em;
 }
