@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
 .description {
   margin-top: 3em;
   padding: 1.5em;
@@ -33,7 +36,7 @@
   flex-direction: column;
   justify-content: center;
   width: 60vw;
-  height: 15vh;
+  height: 18vh;
   border-radius: 0.5em;
   background-color: #DFE0E2;
   color: #0C1C1F;
@@ -41,4 +44,8 @@
   position: absolute;
   top: 11em;
   left: 5em;
+}
+
+.name-address-details{
+  font-family: 'Montserrat', sans-serif;
 }
