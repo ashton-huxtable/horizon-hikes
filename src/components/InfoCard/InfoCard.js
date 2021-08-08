@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './InfoCard.css'
+
 export const InfoCard = ({name, address, description, image}) => {
 
   const {
@@ -9,10 +11,12 @@ export const InfoCard = ({name, address, description, image}) => {
 
   return(
     <article className='name-address-details'>
-      <img src={image.url} alt={image.altText} />
-      <div className='name-address'>
-        <h3>Welcome to {name}!</h3>
-        <p>{city}, {stateCode}</p> 
+      <div className='details'>
+        <img className='detail-image' src={image.url} alt={image.altText} />
+        <div className='name-address'>
+          <h3 className='details-name'>Welcome to {name}!</h3>
+          <p className='details-address'>{city}, {stateCode}</p> 
+        </div>
       </div>
       <p className='description'>{description}</p>
     </article>
