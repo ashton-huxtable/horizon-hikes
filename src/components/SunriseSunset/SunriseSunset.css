@@ -10,6 +10,10 @@
   border-radius: 1em;
 }
 
+.add-trip:focus {
+  background-color: #FFE1D7;
+}
+
 .calendar-info{
   display: flex;
   flex-direction: column;
