@@ -7,17 +7,13 @@ import React, { useState, useEffect }from 'react';
 import SunriseSunset from '../SunriseSunset/SunriseSunset';
 
 import arrow from '../../assets/arrow.png'
-
 import PropTypes from 'prop-types'
 import '../Error/Error.css'
-
 
 const ParkDetails = ({selectedPark, addToFutureTrips}) => {
 
   const [parkDetails, setParkDetails] = useState({});
   const [error, setError] = useState('')
-
-
 
   useEffect(() => {
     const getDetails = () => {

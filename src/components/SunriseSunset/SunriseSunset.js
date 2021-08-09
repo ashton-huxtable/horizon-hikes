@@ -11,15 +11,12 @@ import 'react-calendar/dist/Calendar.css';
 import './SunriseSunset.css'
 import '../Error/Error.css'
 
-
-
 const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, id}) => {
 
   const [dateState, setDateState] = useState(new Date())
   const [sunRiseSet, setSunRiseSet] = useState({})
   const [newTrip, setNewtrip] = useState({})
   const [error, setError] = useState('')
-
 
   useEffect(() => {
 
