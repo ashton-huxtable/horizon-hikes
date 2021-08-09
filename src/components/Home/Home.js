@@ -45,7 +45,7 @@ const Home = () => {
         {!!error && <h2 className='error'>{error}</h2>}
         <Route exact path='/' >
           {!Object.keys(parks).length ?
-          <h2> Loading...</h2> :
+          <h2 className='error'> Loading...</h2> :
           <StatePicker selectState={selectState}/> 
            }
           </Route> 
