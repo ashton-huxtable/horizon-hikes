@@ -2,9 +2,11 @@ import { filterParkDetails } from '../Util/utilities';
 import { getParkDetailsData } from '../Util/apiCalls';
 import { InfoCard } from '../InfoCard/InfoCard';
 import { Link } from 'react-router-dom';
-import ParkActivities from '../ParkActivities/ParkActivities';
+import { ParkActivities } from '../ParkActivities/ParkActivities';
 import React, { useState, useEffect }from 'react';
 import SunriseSunset from '../SunriseSunset/SunriseSunset';
+
+import PropTypes from 'prop-types'
 
 
 const ParkDetails = ({selectedPark, addToFutureTrips}) => {
@@ -52,6 +54,11 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
         }
       </main>
     )
+  }
+
+  ParkDetails.propTypes = {
+    selectedPark: PropTypes.object,
+    addToFutureTrips: PropTypes.func
   }
 
 export default ParkDetails;
