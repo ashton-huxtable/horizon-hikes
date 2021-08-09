@@ -13,6 +13,8 @@ import '../Error/Error.css'
 
 const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, id}) => {
 
+  let today = new Date();
+
   const [dateState, setDateState] = useState(new Date())
   const [sunRiseSet, setSunRiseSet] = useState({})
   const [newTrip, setNewtrip] = useState({})
@@ -61,6 +63,7 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
       <Calendar className='calendar' 
         onChange={setDateState}
         value={dateState}
+        minDate={today}
       />
       <p className='selected-date'>Current selected date is: {moment(dateState).format('MMMM Do YYYY')}</p>
       {(!Object.keys(sunRiseSet).length && error) ?
