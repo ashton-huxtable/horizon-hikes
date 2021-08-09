@@ -38,7 +38,7 @@ const Home = () => {
   return(
     <main>
       <Switch>
-        {error && <h2 className='error'>{error}</h2>}
+        {!!error && <h2 className='error'>{error}</h2>}
         <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
         {(!parksByState.length && !error) ?
           <h2 className='error'>Loading park list...</h2> :
