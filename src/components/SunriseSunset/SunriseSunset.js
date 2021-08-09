@@ -35,13 +35,17 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
 
   const submitTrip = () => {
     const tripDate = moment(dateState).format('MMMM Do YYYY')
-    setNewtrip({'image': image, 
+    if(newTrip.sunRiseSet !== sunRiseSet) {
+      setNewtrip({'image': image, 
       'fullName': fullName, 
       'sunRiseSet': sunRiseSet, 
       'tripDate': {tripDate}, 
       'id': id})
+    } else  {
+      return null
+    }
   } 
-
+  
   const addTrip = () => {
     if (Object.keys(newTrip).length){
       addToFutureTrips(newTrip)
