@@ -30,6 +30,10 @@ describe('Park Details Page', () => {
           .get('button').contains('Details').click()
   })
 
+  it('Should have a url that is specific to the park', () => {
+    cy.url('http://localhost:3000/details/azru')
+  } )
+
   it('Should render a page with an image and basic park info', () => {
     cy.get('img[class="detail-image"]').should('have.attr', 'src', 'https://www.nps.gov/common/uploads/structured_data/3C80AFE4-1DD8-B71B-0BE2EEFC92413401.jpg')
       .get('h3').contains('Welcome to Aztec Ruins National Monument!')
@@ -58,8 +62,20 @@ describe('Park Details Page', () => {
     cy.get('section[class="activities"]')
       cy.get('p[class="other-activities"]').contains('Other Activities in the Park')
   })
+
+  it('Should allow the user to go back to the list of parks from the details page', () => {
+    cy.get('img[class="go-back"]').click()
+      .get('article[class="park-card"]')
+      .get('h3').contains('Aztec Ruins')
+      .get('h3').contains('Bandelier')
+     cy.url().should('include', '/parksByState')
+  })
+
+  it('Should allow the user to return home from favorites', () => {
+    cy.get('h1').click()
+      .get('h2').contains("Welcome to Horizon Hikes! Please choose a state below to start planing your trip!")
+  })
   
- 
 })
 
 
