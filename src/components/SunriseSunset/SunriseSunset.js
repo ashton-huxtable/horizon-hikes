@@ -49,15 +49,15 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
   } 
   
  
+  const addTrip = () => {
+    if (Object.keys(newTrip).length){
+      addToFutureTrips(newTrip)
+    }
+  }
 
   useEffect(() => {
-    const addTrip = () => {
-      if (Object.keys(newTrip).length){
-        addToFutureTrips(newTrip)
-      }
-    }
     addTrip()
-  }, [newTrip, addToFutureTrips])
+  }, [newTrip])
 
   return(
     <section className='calendar-info'>
