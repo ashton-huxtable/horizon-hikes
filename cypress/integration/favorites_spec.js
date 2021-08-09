@@ -30,6 +30,11 @@ describe('Favorites page view', () => {
     cy.url('http://localhost:3000/futureVisits')
   })
 
+  it('Should show tell the user to go back to the home page if they have not added to their favorites', () => {
+    cy.get('a[class="future-trip-nav"]').click()
+      .get('h2').contains('No trips saved! Return to home to start planning!')
+  })
+
 
   
 })
