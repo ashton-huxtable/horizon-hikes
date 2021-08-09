@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ParkActivities.css'
+
 const ParkActivities = ({activities}) => {
   const moreActivites = activities.map(activity => {
     return(
@@ -8,7 +10,14 @@ const ParkActivities = ({activities}) => {
   })
 
   return(
-    <section className='activities'>{moreActivites}</section>
+    <section className='activities'>
+      <p className='other-activities'>
+        Other Activities in the Park:
+      </p>
+      <div className='activity'>
+        {moreActivites}
+      </div>
+    </section>
   )
 }
 

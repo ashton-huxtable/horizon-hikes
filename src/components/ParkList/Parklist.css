@@ -1,6 +1,11 @@
+
 .card-container{
+  /* background: url('../../background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vh; */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 2em;
-  margin-left: 7vw;
+  overflow: scroll;
+  /* margin-left: 7vw; */
 }
