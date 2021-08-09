@@ -45,6 +45,9 @@ describe('Favorites page view', () => {
       .get('a[class="future-trip-nav"]').click()
   })
 
-
+  it('Should allow the user to return home from favorites', () => {
+    cy.get('h1').click()
+      .get('h2').contains("Welcome to Horizon Hikes! Please choose a state below to start planing your trip!")
+  })
   
 })
