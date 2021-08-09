@@ -20,6 +20,9 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
   const [newTrip, setNewtrip] = useState({})
   const [error, setError] = useState('')
 
+
+  useEffect(() => {
+
   const getData = () => {
     const date = moment(dateState).format('YYYY-MM-DD')
     getSunriseSunsetData(latitude, longitude, date)
@@ -29,10 +32,8 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
       })
       .catch(err => setError('Unable to get sunrise and sunset times. Please try again later!'))
   }
-
-  useEffect(() => {
     getData()
-  }, [dateState])
+  }, [dateState, latitude, longitude])
 
   const submitTrip = () => {
     const tripDate = moment(dateState).format('MMMM Do YYYY')
@@ -47,15 +48,16 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
     }
   } 
   
-  const addTrip = () => {
-    if (Object.keys(newTrip).length){
-      addToFutureTrips(newTrip)
-    }
-  }
+ 
 
   useEffect(() => {
+    const addTrip = () => {
+      if (Object.keys(newTrip).length){
+        addToFutureTrips(newTrip)
+      }
+    }
     addTrip()
-  }, [newTrip])
+  }, [newTrip, addToFutureTrips])
 
   return(
     <section className='calendar-info'>
@@ -88,7 +90,7 @@ SunriseSunset.propTypes = {
   addToFutureTrips: PropTypes.func,
   latitude: PropTypes.string,
   longitude: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   fullName: PropTypes.string,
   id: PropTypes.string
 }

@@ -15,18 +15,20 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
   const [parkDetails, setParkDetails] = useState({});
   const [error, setError] = useState('')
 
-  const getDetails = () => {
-    getParkDetailsData(selectedPark.parkCode)
-      .then(data => {
-        const details = filterParkDetails(data)
-        setParkDetails(details)
-      })
-      .catch(err => setError('Something went wrong. Please try again later!'))
-    }
+
 
   useEffect(() => {
+    const getDetails = () => {
+      getParkDetailsData(selectedPark.parkCode)
+        .then(data => {
+          const details = filterParkDetails(data)
+          setParkDetails(details)
+        })
+        .catch(err => setError('Something went wrong. Please try again later!'))
+      }
+
     getDetails()
-  }, [])
+  }, [selectedPark])
 
   return(
     <div>
