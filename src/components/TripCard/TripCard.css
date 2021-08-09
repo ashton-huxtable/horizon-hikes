@@ -1,0 +1,29 @@
+.trip-card {
+  border: 2px solid #FFE1D7;
+  border-radius: 0.5em;
+  position: relative;
+  width: 90vw;
+  height: 35vh;
+  margin: 0 0 3vh 5vw;
+}
+
+.trip-image{
+  width: 90vw;
+  height: 35vh;
+  border-radius: 0.5em;
+}
+
+.trip-info {
+  border-radius: 0.5em;
+  height: 13vh;
+  width: 90vw;
+  background-color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.8;
+  font-weight: bolder;
+}
+
+.trip-text {
+  margin-left: 0.5em;
+}

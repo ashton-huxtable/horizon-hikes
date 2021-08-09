@@ -8,6 +8,7 @@
 
 html {
   height: 100vh;
+  width: 100vw;
   background-color: #213133;
   margin: 0;
 }
@@ -19,6 +20,7 @@ nav{
   align-content: center;
   height: 12vh;
   margin: 0;
+  width: 100vw;
 }
 
 .heading {
@@ -31,6 +33,12 @@ nav{
 a {
   height: 5vh;
   margin-top: 1em;
+  text-decoration: none;
+}
+
+.future-trip-nav{
+  color: #FFFFFF;
+  align-self: flex-end;
 }
 
 
