@@ -35,6 +35,16 @@ describe('Favorites page view', () => {
       .get('h2').contains('No trips saved! Return to home to start planning!')
   })
 
+  it('Should not allow the user to add duplicate trips', () => {
+    cy.get('path[data-name="NM"]').click()
+    cy.get('article[class="park-card"]').contains('Aztec Ruins')
+      .get('button').contains('Details').click()
+      .get('abbr').contains('11').click()
+      .get('button[class="add-trip"]').click()
+      .get('button[class="add-trip"]').click()
+      .get('a[class="future-trip-nav"]').click()
+  })
+
 
   
 })
