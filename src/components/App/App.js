@@ -6,7 +6,7 @@ function App() {
   return (
   <div>
     <nav>
-      <Link to='/'>
+      <Link className='title' to='/'>
         <h1 className='heading'>Horizon Hikes</h1>
       </Link>
       <NavLink className='future-trip-nav' to='/futureVisits'>Future Trips</NavLink>
