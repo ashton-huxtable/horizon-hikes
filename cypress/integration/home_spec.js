@@ -24,6 +24,17 @@ describe('Home Page', () => {
   it("Should show the user a map of the US", () =>{
     cy.get('svg[class="us-state-map"]')
   })
+  
+  it("Should allow a user to click on a state and render a list of parks and a new url", () => {
+    cy.get('path[data-name="NM"]').click()
+    cy.get('.card-container')
+    cy.get('article[class="park-card"]')
+      .get('h3').contains('Aztec Ruins')
+      .get('h3').contains('Bandelier')
+    cy.url().should('include', '/parksByState')
+  })
+
+  it('Shuold show the user a page with the park details when the details button is clicked', () => {
 
   })
  
