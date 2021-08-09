@@ -6,6 +6,8 @@ import { ParkActivities } from '../ParkActivities/ParkActivities';
 import React, { useState, useEffect }from 'react';
 import SunriseSunset from '../SunriseSunset/SunriseSunset';
 
+import arrow from '../../arrow.png'
+
 import PropTypes from 'prop-types'
 import '../Error/Error.css'
 
@@ -35,11 +37,11 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
     {(!Object.keys(parkDetails).length && error) ? <h2 className='error'>{error}</h2> :
       <main className='park-details'>
         <Link to='/parksByState'>
-          <button>go back</button>
+          <img className='go-back' src={arrow} alt='back arrow' />
         </Link>
         {
           (!Object.keys(parkDetails).length && !error) ?
-          <h2>Loading park details...</h2> :
+          <h2 className='error'>Loading park details...</h2> :
           <section>
             <section className='top'>
               <InfoCard name={parkDetails.fullName} 
