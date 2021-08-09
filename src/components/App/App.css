@@ -16,7 +16,7 @@ html {
 nav{
   background-image: linear-gradient(#0C1C1F,#213133 );
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
   height: 12vh;
   margin: 0;
@@ -28,17 +28,21 @@ nav{
   align-self: center;
   text-align: center;
   font-size: 3em;
+  margin-left: 0.2em;
 }
+
 
 a {
   height: 5vh;
   margin-top: 1em;
+  color: white;
   text-decoration: none;
 }
 
 .future-trip-nav{
   color: #FFFFFF;
   align-self: flex-end;
+  margin-right: 1em;
 }
 
 

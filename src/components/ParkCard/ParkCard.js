@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
+import parkPhoto from '../../assets/parkCardImg.jpg'
 import './ParkCard.css';
-import parkPhoto from '../../parkCardImg.jpg'
 
 export const ParkCard = ({name, designation, id}) => {
 

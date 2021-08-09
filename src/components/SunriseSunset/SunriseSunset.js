@@ -5,21 +5,20 @@ import { getSunriseSunsetData } from '../Util/apiCalls';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import sunrise from '../../sunrise.png'
-import sunset from '../../sunset.png';
+import sunrise from '../../assets/sunrise.png'
+import sunset from '../../assets/sunset.png';
 import 'react-calendar/dist/Calendar.css';
 import './SunriseSunset.css'
 import '../Error/Error.css'
 
-
-
 const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, id}) => {
+
+  let today = new Date();
 
   const [dateState, setDateState] = useState(new Date())
   const [sunRiseSet, setSunRiseSet] = useState({})
   const [newTrip, setNewtrip] = useState({})
   const [error, setError] = useState('')
-
 
   useEffect(() => {
 
@@ -47,14 +46,13 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
       return null
     }
   } 
-  
  
   const addTrip = () => {
     if (Object.keys(newTrip).length){
       addToFutureTrips(newTrip)
     }
   }
-
+  
   useEffect(() => {
     addTrip()
   }, [newTrip])
@@ -65,6 +63,7 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
       <Calendar className='calendar' 
         onChange={setDateState}
         value={dateState}
+        minDate={today}
       />
       <p className='selected-date'>Current selected date is: {moment(dateState).format('MMMM Do YYYY')}</p>
       {(!Object.keys(sunRiseSet).length && error) ?
