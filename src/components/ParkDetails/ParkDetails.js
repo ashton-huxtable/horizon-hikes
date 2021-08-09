@@ -7,11 +7,13 @@ import React, { useState, useEffect }from 'react';
 import SunriseSunset from '../SunriseSunset/SunriseSunset';
 
 import PropTypes from 'prop-types'
+import '../Error/Error.css'
 
 
 const ParkDetails = ({selectedPark, addToFutureTrips}) => {
 
   const [parkDetails, setParkDetails] = useState({});
+  const [error, setError] = useState('')
 
   const getDetails = () => {
     getParkDetailsData(selectedPark.parkCode)
@@ -19,20 +21,23 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
         const details = filterParkDetails(data)
         setParkDetails(details)
       })
-  }
+      .catch(err => setError('Something went wrong. Please try again later!'))
+    }
 
   useEffect(() => {
     getDetails()
   }, [])
 
-    return(
+  return(
+    <div>
+    {(!Object.keys(parkDetails).length && error) ? <h2 className='error'>{error}</h2> :
       <main className='park-details'>
         <Link to='/parksByState'>
           <button>go back</button>
         </Link>
         {
-          !Object.keys(parkDetails).length ?
-          <h2>loading......</h2> :
+          (!Object.keys(parkDetails).length && !error) ?
+          <h2>Loading park details...</h2> :
           <section>
             <section className='top'>
               <InfoCard name={parkDetails.fullName} 
@@ -53,8 +58,10 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
           </section>
         }
       </main>
-    )
-  }
+      }
+    </div>
+  )
+}
 
   ParkDetails.propTypes = {
     selectedPark: PropTypes.object,

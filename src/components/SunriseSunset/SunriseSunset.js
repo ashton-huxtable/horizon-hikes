@@ -9,6 +9,7 @@ import sunrise from '../../sunrise.png'
 import sunset from '../../sunset.png';
 import 'react-calendar/dist/Calendar.css';
 import './SunriseSunset.css'
+import '../Error/Error.css'
 
 
 
@@ -17,10 +18,7 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
   const [dateState, setDateState] = useState(new Date())
   const [sunRiseSet, setSunRiseSet] = useState({})
   const [newTrip, setNewtrip] = useState({})
-
-  const changeDate = (e) => {
-    setDateState(e)
-  }
+  const [error, setError] = useState('')
 
   const getData = () => {
     const date = moment(dateState).format('YYYY-MM-DD')
@@ -29,6 +27,7 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
         const times = filterSunriseSunsetData(data)
         setSunRiseSet(times)
       })
+      .catch(err => setError('Unable to get sunrise and sunset times. Please try again later!'))
   }
 
   useEffect(() => {
@@ -37,13 +36,17 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
 
   const submitTrip = () => {
     const tripDate = moment(dateState).format('MMMM Do YYYY')
-    setNewtrip({'image': image, 
+    if(newTrip.sunRiseSet !== sunRiseSet) {
+      setNewtrip({'image': image, 
       'fullName': fullName, 
       'sunRiseSet': sunRiseSet, 
       'tripDate': {tripDate}, 
       'id': id})
+    } else  {
+      return null
+    }
   } 
-
+  
   const addTrip = () => {
     if (Object.keys(newTrip).length){
       addToFutureTrips(newTrip)
@@ -62,16 +65,19 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
         value={dateState}
       />
       <p className='selected-date'>Current selected date is: {moment(dateState).format('MMMM Do YYYY')}</p>
-      <div className='sunrise-sunset'>
-        <section className='sunrise'>
-          <img className='riseset-img' src={sunrise} alt='sunrise icon'/>
-          <h5>Sunrise:  {sunRiseSet.sunrise}</h5>
-        </section>
-        <section className='sunset'>
-          <img className='riseset-img'src={sunset} alt='sunset icon'/>
-          <h5>Sunset:  {sunRiseSet.sunset}</h5>
-        </section>
-      </div>
+      {(!Object.keys(sunRiseSet).length && error) ?
+        <h2 className='error'>{error}</h2> :
+        <div className='sunrise-sunset'>
+          <section className='sunrise'>
+            <img className='riseset-img' src={sunrise} alt='sunrise icon'/>
+            <h5>Sunrise:  {sunRiseSet.sunrise}</h5>
+          </section>
+          <section className='sunset'>
+            <img className='riseset-img'src={sunset} alt='sunset icon'/>
+            <h5>Sunset:  {sunRiseSet.sunset}</h5>
+          </section>
+        </div>
+      }
       <button className='add-trip' onClick={submitTrip}>Add to Future Trips!</button>
     </section>
   )
