@@ -42,18 +42,22 @@ const Home = () => {
       <Switch>
         {!!error && <h2 className='error'>{error}</h2>}
         <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
-        {(!parksByState.length && !error) ?
-          <h2 className='error'>Loading park list...</h2> :
-          <Route path='/parksByState' render={() => <ParkList parksByState={parksByState}/>}/>
-        }
+        <Route path='/parksByState'>
+          {(!parksByState.length && !error) ?
+            <h2 className='error'>Loading park list...</h2> :
+            <ParkList parksByState={parksByState}/>
+          }
+        </Route>
+        <Route path='/futureVisits'>
+          {!futureTrips.length ?
+            <h2 className='error'>No trips saved! Return to home to start planning!</h2> :
+            <FutureVisits futureTrips={futureTrips}/>
+          }
+        </Route>
         <Route path='/details/:parkCode' render={({match}) => {
           const selectedPark = parksByState.find(park => park.parkCode === match.params.parkCode)
           return <ParkDetails selectedPark={selectedPark} addToFutureTrips={addToFutureTrips} />
         }}/>
-        {!futureTrips.length ?
-          <h2 className='error'>No trips saved! Return to home to start planning!</h2> :
-          <Route path='/futureVisits' render={() => <FutureVisits futureTrips={futureTrips}/>} />
-        }
         <Route path="*" component={NotFound} />
       </Switch>
     </main>
