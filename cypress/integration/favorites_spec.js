@@ -25,5 +25,11 @@ describe('Favorites page view', () => {
     cy.visit("http://localhost:3000")
   })
 
+  it('Should show the user a url that includes futureVisits', () => {
+    cy.get('a[class="future-trip-nav"]').click()
+    cy.url('http://localhost:3000/futureVisits')
+  })
+
+
   
 })
