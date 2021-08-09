@@ -26,12 +26,14 @@ const Home = () => {
     .catch(err => setError('Something went wrong. Please try again later'))
   },[])
 
-  console.log(parks)
-
-  const selectState = (stateName) => {
-    let parksInState = parks.parks.filter(park => park.states.includes(stateName))
-    setParksByState(parksInState)
-  }
+    const selectState = (stateName) => {
+      if (Object.keys(parks).length) {
+        let parksInState = parks.parks.filter(park => park.states.includes(stateName))
+        setParksByState(parksInState)
+      } else {
+        return null
+      }
+    }
 
   const addToFutureTrips = (trip) => {
     setFutureTrips(allTrips =>[...allTrips, trip])
@@ -41,7 +43,12 @@ const Home = () => {
     <main>
       <Switch>
         {!!error && <h2 className='error'>{error}</h2>}
-        <Route exact path='/' render={() => <StatePicker selectState={selectState}/> } />
+        <Route exact path='/' >
+          {!Object.keys(parks).length ?
+          <h2 className='error'> Loading...</h2> :
+          <StatePicker selectState={selectState}/> 
+           }
+          </Route> 
         <Route path='/parksByState'>
           {(!parksByState.length && !error) ?
             <h2 className='error'>Loading park list...</h2> :

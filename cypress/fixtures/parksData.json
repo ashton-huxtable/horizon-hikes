@@ -1,0 +1,52 @@
+{ "total": "40",
+  "limit": "50",
+  "start": "0",
+  "data": [
+    {
+    "id": "BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA",
+    "name": "Hiking",
+    "parks": [
+      {
+        "states": "NM",
+        "parkCode": "azru",
+        "designation": "National Monument",
+        "fullName": "Aztec Ruins National Monument",
+        "url": "https://www.nps.gov/azru/index.htm",
+        "name": "Aztec Ruins"
+      },
+      {
+        "states": "SD",
+        "parkCode": "badl",
+        "designation": "National Park",
+        "fullName": "Badlands National Park",
+        "url": "https://www.nps.gov/badl/index.htm",
+        "name": "Badlands"
+      },
+      {
+        "states": "NM",
+        "parkCode": "band",
+        "designation": "National Monument",
+        "fullName": "Bandelier National Monument",
+        "url": "https://www.nps.gov/band/index.htm",
+        "name": "Bandelier"
+      },
+      {
+        "states": "AK",
+        "parkCode": "bela",
+        "designation": "National Preserve",
+        "fullName": "Bering Land Bridge National Preserve",
+        "url": "https://www.nps.gov/bela/index.htm",
+        "name": "Bering Land Bridge"
+      },
+      {
+        "states": "CO",
+        "parkCode": "beol",
+        "designation": "National Historic Site",
+        "fullName": "Bent's Old Fort National Historic Site",
+        "url": "https://www.nps.gov/beol/index.htm",
+        "name": "Bent's Old Fort"
+      }
+    ]
+  } 
+]
+}

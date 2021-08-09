@@ -6,6 +6,8 @@ import { ParkActivities } from '../ParkActivities/ParkActivities';
 import React, { useState, useEffect }from 'react';
 import SunriseSunset from '../SunriseSunset/SunriseSunset';
 
+import arrow from '../../arrow.png'
+
 import PropTypes from 'prop-types'
 import '../Error/Error.css'
 
@@ -15,29 +17,31 @@ const ParkDetails = ({selectedPark, addToFutureTrips}) => {
   const [parkDetails, setParkDetails] = useState({});
   const [error, setError] = useState('')
 
-  const getDetails = () => {
-    getParkDetailsData(selectedPark.parkCode)
-      .then(data => {
-        const details = filterParkDetails(data)
-        setParkDetails(details)
-      })
-      .catch(err => setError('Something went wrong. Please try again later!'))
-    }
+
 
   useEffect(() => {
+    const getDetails = () => {
+      getParkDetailsData(selectedPark.parkCode)
+        .then(data => {
+          const details = filterParkDetails(data)
+          setParkDetails(details)
+        })
+        .catch(err => setError('Something went wrong. Please try again later!'))
+      }
+
     getDetails()
-  }, [])
+  }, [selectedPark])
 
   return(
     <div>
     {(!Object.keys(parkDetails).length && error) ? <h2 className='error'>{error}</h2> :
       <main className='park-details'>
         <Link to='/parksByState'>
-          <button>go back</button>
+          <img className='go-back' src={arrow} alt='back arrow' />
         </Link>
         {
           (!Object.keys(parkDetails).length && !error) ?
-          <h2>Loading park details...</h2> :
+          <h2 className='error'>Loading park details...</h2> :
           <section>
             <section className='top'>
               <InfoCard name={parkDetails.fullName} 

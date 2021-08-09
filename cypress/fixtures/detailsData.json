@@ -1,0 +1,241 @@
+{
+  "total": "1",
+  "limit": "50",
+  "start": "0",
+  "data": [
+    {
+      "id": "CD54150B-24F6-4B96-8D6F-B23AF92A70F2",
+      "url": "https://www.nps.gov/azru/index.htm",
+      "fullName": "Aztec Ruins National Monument",
+      "parkCode": "azru",
+      "description": "Pueblo people describe this site as part of their migration journey. Today you can follow their ancient passageways to a distant time. Explore a 900-year old ancestral Pueblo Great House of over 400 masonry rooms. Look up and see original timbers holding up the roof. Search for the fingerprints of ancient workers in the mortar. Listen for an echo of ritual drums in the reconstructed Great Kiva.",
+      "latitude": "36.83682216",
+      "longitude": "-107.9999245",
+      "latLong": "lat:36.83682216, long:-107.9999245",
+      "activities": [
+        {
+          "id": "09DF0950-D319-4557-A57E-04CD2F63FF42",
+          "name": "Arts and Culture"
+        },
+        {
+          "id": "FAED7F97-3474-4C21-AB42-FB0768A2F826",
+          "name": "Cultural Demonstrations"
+        },
+        {
+          "id": "B33DC9B6-0B7D-4322-BAD7-A13A34C584A3",
+          "name": "Guided Tours"
+        },
+        {
+          "id": "A0631906-9672-4583-91DE-113B93DB6B6E",
+          "name": "Self-Guided Tours - Walking"
+        },
+        {
+          "id": "BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA",
+          "name": "Hiking"
+        },
+        {
+          "id": "45261C0A-00D8-4C27-A1F8-029F933A0D34",
+          "name": "Front-Country Hiking"
+        },
+        {
+          "id": "DF4A35E0-7983-4A3E-BC47-F37B872B0F25",
+          "name": "Junior Ranger Program"
+        },
+        {
+          "id": "0C0D142F-06B5-4BE1-8B44-491B90F93DEB",
+          "name": "Park Film"
+        },
+        {
+          "id": "C8F98B28-3C10-41AE-AA99-092B3B398C43",
+          "name": "Museum Exhibits"
+        },
+        {
+          "id": "24380E3F-AD9D-4E38-BF13-C8EEB21893E7",
+          "name": "Shopping"
+        },
+        {
+          "id": "467DC8B8-0B7D-436D-A026-80A22358F615",
+          "name": "Bookstore and Park Store"
+        }
+        ],
+        "topics": [
+          {
+            "id": "7F81A0CB-B91F-4896-B9A5-41BE9A54A27B",
+            "name": "Archeology"
+          },
+          {
+            "id": "A0C86055-4C79-4F70-9D2E-6B9B738290D0",
+            "name": "Ruins"
+          },
+          {
+            "id": "A1BAF33E-EA84-4608-A888-4CEE9541F027",
+            "name": "Native American Heritage"
+          },
+          {
+            "id": "5BE55D7F-BDB6-4E3D-AC35-2D8EBB974417",
+            "name": "Trails"
+          }
+      ],
+    "states": "NM",
+    "contacts": {
+    "phoneNumbers": [
+      {
+        "phoneNumber": "5053346174",
+        "description": "",
+        "extension": "0",
+        "type": "Voice"
+      },
+      {
+        "phoneNumber": "5053346372",
+        "description": "",
+        "extension": "",
+        "type": "Fax"
+      }
+    ],
+    "emailAddresses": [
+    {
+    "description": "",
+    "emailAddress": "azru_information@nps.gov"
+    }
+    ]
+    },
+    "entranceFees": [
+    {
+    "cost": "0.00",
+    "description": "As of May 1, 2018, this is a fee-free park.",
+    "title": "Entrance Fee"
+    }
+    ],
+    "entrancePasses": [],
+    "fees": [],
+    "directionsInfo": "From Albuquerque/Bloomfield, NM: Follow Hwy 550 north into Aztec, turn left onto Highway 516, drive 3/4 mile, then turn right onto Ruins Road. Follow Ruins Road 1/2 mile to the monument. From Durango, CO: Follow Hwy 550 south into Aztec, where it will become 516. Turn right onto Ruins Road. Follow Ruins Road 1/2 mile to the monument. From Farmington, NM Follow Highway 516 east into Aztec. 1/4 mile past Lightplant Road, turn left onto Ruins Road. Follow Ruins Road 1/2 mile to the monument.",
+    "directionsUrl": "http://www.nps.gov/azru/planyourvisit/directions.htm",
+    "operatingHours": [
+    {
+    "exceptions": [
+    {
+    "exceptionHours": {
+    "wednesday": "Closed",
+    "monday": "Closed",
+    "thursday": "Closed",
+    "sunday": "Closed",
+    "tuesday": "Closed",
+    "friday": "Closed",
+    "saturday": "Closed"
+    },
+    "startDate": "2022-01-01",
+    "name": "Closed for New Year's Day",
+    "endDate": "2022-01-01"
+    },
+    {
+      "exceptionHours": {
+        "wednesday": "Closed",
+        "monday": "Closed",
+        "thursday": "Closed",
+        "sunday": "Closed",
+        "tuesday": "Closed",
+        "friday": "Closed",
+        "saturday": "Closed"
+      },
+      "startDate": "2021-11-25",
+      "name": "Closed for Thanksgiving Day",
+      "endDate": "2021-11-25"
+    },
+    {
+      "exceptionHours": {
+        "wednesday": "Closed",
+        "monday": "Closed",
+        "thursday": "Closed",
+        "sunday": "Closed",
+        "tuesday": "Closed",
+        "friday": "Closed",
+        "saturday": "Closed"
+      },
+      "startDate": "2021-12-25",
+      "name": "Closed for Christmas Day",
+      "endDate": "2021-12-25"
+    }
+    ],
+    "description": "The monument and the Visitor Center are both open every day from 9am-5pm. During the summer, the park is open from 8am-6pm. The monument and Visitor Center will be closed on Thanksgiving, Christmas, and New Year's Days. The local time zone is MDT (-0600). Unless there is a <a href=\"https://www.nps.gov/azru/planyourvisit/calendar.htm\"> public program scheduled </a>, there is no after-hours access.",
+    "standardHours": {
+      "wednesday": "8:00AM - 6:00PM",
+      "monday": "8:00AM - 6:00PM",
+      "thursday": "8:00AM - 6:00PM",
+      "sunday": "8:00AM - 6:00PM",
+      "tuesday": "8:00AM - 6:00PM",
+      "friday": "8:00AM - 6:00PM",
+      "saturday": "8:00AM - 6:00PM"
+    },
+    "name": "Hours"
+    }
+    ],
+    "addresses": [
+      {
+        "postalCode": "87410",
+        "city": "Aztec",
+        "stateCode": "NM",
+        "line1": "725 Ruins Road",
+        "type": "Physical",
+        "line3": "",
+        "line2": ""
+      },
+      {
+        "postalCode": "87410",
+        "city": "Aztec",
+        "stateCode": "NM",
+        "line1": "725 Ruins Road",
+        "type": "Mailing",
+        "line3": "",
+        "line2": ""
+      }
+    ],
+    "images": [
+      {
+        "credit": "NPS Photo",
+        "title": "Great Kiva in Aztec West plaza",
+        "altText": "Reconstructed stone kiva amidst stone ruins",
+        "caption": "Great Kiva in Aztec West plaza",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C80AFE4-1DD8-B71B-0BE2EEFC92413401.jpg"
+      },
+      {
+        "credit": "NPS Photo",
+        "title": "Great Kiva",
+        "altText": "Interior of a reconstructed great kiva",
+        "caption": "The reconstructed Great Kiva",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C80ACCA-1DD8-B71B-0B0BCE587DB51606.jpg"
+      },
+      {
+        "credit": "NPS Photo",
+        "title": "Rainbow over the Great Kiva",
+        "altText": "Rainbow over the reconstructed Great Kiva",
+        "caption": "Rainbow over the reconstructed Great Kiva",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C80ADDD-1DD8-B71B-0B3BC9BFA515A233.jpg"
+      },
+      {
+        "credit": "NPS Photo",
+        "title": "Winter snow on Aztec West great house",
+        "altText": "Winter snow on stone ruins",
+        "caption": "Winter snow on Aztec West great house",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C80AEDE-1DD8-B71B-0B0832D47B050F9A.jpg"
+      },
+      {
+        "credit": "NPS Photo",
+        "title": "T-shaped doorway in Aztec West",
+        "altText": "Original \"T-shaped\" doorway in stone ruins",
+        "caption": "Original \"T-shaped\" doorway in Aztec West",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C80B0EC-1DD8-B71B-0B547C0BF2907EF8.jpg"
+      },
+      {
+        "credit": "NPS Photo",
+        "title": "Original ancestral Pueblo roof structure",
+        "altText": "Three layers of original intact roof beams",
+        "caption": "Original ancestral Pueblo roof structures",
+        "url": "https://www.nps.gov/common/uploads/structured_data/3C80B309-1DD8-B71B-0BB4F9B21491B47D.jpg"
+      }
+    ],
+    "weatherInfo": "Summer High temperatures range between 80°F and 99°F degrees with a few days over 100°F. Afternoon thunderstorms usually cool things down in late July and August. Fall Usually pleasant, with mild days and crisp nights. Winter Daytime temperatures range between 20°F and 50°F with cold nights that can reach 0°F. Snow is periodic, but accumulations are typically only 1-2 inches. Spring Weather is especially unpredictable: it can be windy, cold, and wet, or still, warm, and dry.",
+    "name": "Aztec Ruins",
+    "designation": "National Monument"
+    }
+    ]
+  }
