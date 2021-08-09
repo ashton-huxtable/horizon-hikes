@@ -26,6 +26,6 @@ export const FutureVisits = ({futureTrips}) => {
   )
 }
 
-FutureTrips.propTypes = {
+FutureVisits.propTypes = {
   futureTrips: PropTypes.arrayOf(PropTypes.object)
 }

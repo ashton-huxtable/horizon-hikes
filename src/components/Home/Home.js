@@ -26,6 +26,8 @@ const Home = () => {
     .catch(err => setError('Something went wrong. Please try again later'))
   },[])
 
+  console.log(parks)
+
   const selectState = (stateName) => {
     let parksInState = parks.parks.filter(park => park.states.includes(stateName))
     setParksByState(parksInState)
