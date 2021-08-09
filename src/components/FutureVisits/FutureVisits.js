@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { TripCard } from '../TripCard/TripCard';
 
-const FutureVisits = ({futureTrips}) => {
+export const FutureVisits = ({futureTrips}) => {
 
   const userTrips = futureTrips.map(trip => {
     const {image, fullName, tripDate, sunRiseSet, id} = trip
@@ -25,4 +26,6 @@ const FutureVisits = ({futureTrips}) => {
   )
 }
 
-export default FutureVisits;
+FutureTrips.propTypes = {
+  futureTrips: PropTypes.arrayOf(PropTypes.object)
+}

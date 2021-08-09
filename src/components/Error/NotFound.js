@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NotFound = () => {
+export const NotFound = () => {
 
   return(
     <h2 className='error'>
@@ -9,5 +9,3 @@ const NotFound = () => {
   )
 
 }
-
-export default NotFound;
