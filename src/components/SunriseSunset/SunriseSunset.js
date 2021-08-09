@@ -5,8 +5,8 @@ import { getSunriseSunsetData } from '../Util/apiCalls';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import sunrise from '../../sunrise.png'
-import sunset from '../../sunset.png';
+import sunrise from '../../assets/sunrise.png'
+import sunset from '../../assets/sunset.png';
 import 'react-calendar/dist/Calendar.css';
 import './SunriseSunset.css'
 import '../Error/Error.css'

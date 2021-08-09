@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './ParkCard.css';
-import parkPhoto from '../../parkCardImg.jpg'
+import parkPhoto from '../../assets/parkCardImg.jpg'
 
 export const ParkCard = ({name, designation, id}) => {
 
