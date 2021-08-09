@@ -47,14 +47,13 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
       return null
     }
   } 
-  
  
   const addTrip = () => {
     if (Object.keys(newTrip).length){
       addToFutureTrips(newTrip)
     }
   }
-
+  
   useEffect(() => {
     addTrip()
   }, [newTrip])

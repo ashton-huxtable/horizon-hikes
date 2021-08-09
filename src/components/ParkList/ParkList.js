@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ParkCard } from '../ParkCard/ParkCard';
 import PropTypes from 'prop-types';
 import React from 'react';

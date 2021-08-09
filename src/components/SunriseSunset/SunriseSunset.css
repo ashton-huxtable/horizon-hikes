@@ -10,7 +10,7 @@
   border-radius: 1em;
 }
 
-.add-trip:focus {
+.add-trip:active {
   background-color: #FFE1D7;
 }
 
