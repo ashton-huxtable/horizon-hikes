@@ -55,11 +55,11 @@ describe('Park Details Page', () => {
   })
 
   it('Should show the user a list of activities at that park', () => {
-    cy.get('section[class="activities]')
-      .get('p[class="other-activities]').contains('Other Activities in the Park')
+    cy.get('section[class="activities"]')
+      cy.get('p[class="other-activities"]').contains('Other Activities in the Park')
   })
   
  
-  })
+})
 
 
