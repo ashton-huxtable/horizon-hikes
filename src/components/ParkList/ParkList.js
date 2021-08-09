@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import ParkCard from '../ParkCard/ParkCard';
+import { ParkCard } from '../ParkCard/ParkCard';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import './ParkList.css'
 
+export const ParkList = ({parksByState}) => {
 
-const ParkList = (props) => {
-
-    const parkCards = props.parksByState.map(park => {
+    const parkCards = parksByState.map(park => {
       return(
         <ParkCard 
           name={park.name}
@@ -25,5 +25,6 @@ const ParkList = (props) => {
   )
 }
 
-
-export default ParkList;
+ParkList.propTypes = {
+  parksByState: PropTypes.arrayOf(PropTypes.object)
+}

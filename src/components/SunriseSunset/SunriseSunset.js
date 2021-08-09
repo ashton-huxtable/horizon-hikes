@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import { filterSunriseSunsetData } from '../Util/utilities';
 import { getSunriseSunsetData } from '../Util/apiCalls';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import sunrise from '../../sunrise.png'
@@ -81,6 +82,15 @@ const SunriseSunset = ({latitude, longitude, image, fullName, addToFutureTrips, 
     </section>
   )
 
+}
+
+SunriseSunset.propTypes = {
+  addToFutureTrips: PropTypes.func,
+  latitude: PropTypes.string,
+  longitude: PropTypes.string,
+  image: PropTypes.string,
+  fullName: PropTypes.string,
+  id: PropTypes.string
 }
 
 export default SunriseSunset;

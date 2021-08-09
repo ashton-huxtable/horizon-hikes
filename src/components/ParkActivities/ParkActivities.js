@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ParkActivities.css'
 
-const ParkActivities = ({activities}) => {
+export const ParkActivities = ({activities}) => {
   const moreActivites = activities.map(activity => {
     return(
       <p key={activity.id}>{activity.name}</p>
@@ -21,4 +22,7 @@ const ParkActivities = ({activities}) => {
   )
 }
 
-export default ParkActivities;
+ParkActivities.propTypes = {
+  activities: PropTypes.arrayOf(PropTypes.object)
+}
+

@@ -4,10 +4,10 @@ import React from 'react';
 import USAMap from 'react-usa-map';
 import './StatePicker.css';
 
-const StatePicker = (props) => {
+export const StatePicker = ({selectState}) => {
 
   const mapHandler = (event) => {
-    props.selectState(event.target.dataset.name)
+    selectState(event.target.dataset.name)
   }
 
   return(
@@ -20,5 +20,9 @@ const StatePicker = (props) => {
   )
 }
 
-export default StatePicker
+StatePicker.propTypes = {
+  selectState: PropTypes.func
+}
+
+
 

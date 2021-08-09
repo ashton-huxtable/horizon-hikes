@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './TripCard.css'
 
@@ -15,4 +16,12 @@ export const TripCard = ({image, name, date, sunrise, sunset}) => {
       </div>
     </article>
   )
+}
+
+TripCard.propTypes = {
+  image: PropTypes.object,
+  name: PropTypes.string,
+  date: PropTypes.string,
+  sunrise: PropTypes.string,
+  sunset: PropTypes.string
 }

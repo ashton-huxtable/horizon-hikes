@@ -1,12 +1,12 @@
 import { filterParksForHiking } from '../Util/utilities';
 import { getParksByActivities } from '../Util/apiCalls';
-import NotFound from '../Error/NotFound';
+import { NotFound } from '../Error/NotFound';
 import ParkDetails from '../ParkDetails/ParkDetails';
-import ParkList from '../ParkList/ParkList';
+import { ParkList } from '../ParkList/ParkList';
 import React, {useState, useEffect} from 'react';
-import StatePicker from '../StatePicker/StatePicker';
+import { StatePicker } from '../StatePicker/StatePicker';
 import { Route, Switch } from 'react-router-dom';
-import FutureVisits from '../FutureVisits/FutureVisits';
+import { FutureVisits } from '../FutureVisits/FutureVisits';
 
 import '../Error/Error.css'
 
@@ -25,6 +25,8 @@ const Home = () => {
     })
     .catch(err => setError('Something went wrong. Please try again later'))
   },[])
+
+  console.log(parks)
 
   const selectState = (stateName) => {
     let parksInState = parks.parks.filter(park => park.states.includes(stateName))

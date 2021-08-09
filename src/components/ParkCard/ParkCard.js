@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './ParkCard.css';
 import parkPhoto from '../../parkCardImg.jpg'
 
-const ParkCard = ({name, designation, id}) => {
-
+export const ParkCard = ({name, designation, id}) => {
 
   return(
     <article className='park-card'>
@@ -21,4 +21,8 @@ const ParkCard = ({name, designation, id}) => {
   )
 }
 
-export default ParkCard
+ParkCard.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  id: PropTypes.string
+}

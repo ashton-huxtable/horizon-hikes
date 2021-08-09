@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './InfoCard.css'
 
@@ -22,4 +23,11 @@ export const InfoCard = ({name, address, description, image}) => {
     </article>
 
   )
+}
+
+InfoCard.propTypes = {
+  name: PropTypes.string,
+  address: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.object
 }
