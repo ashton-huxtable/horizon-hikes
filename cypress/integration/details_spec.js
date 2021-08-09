@@ -12,10 +12,17 @@ describe('Park Details Page', () => {
     cy.fixture('detailsData').then(data => {
       cy.intercept('GET', 'https://developer.nps.gov/api/v1/parks?parkCode=azru&api_key=JBKNU4JYTZyyQrYagU2YsGhl1RrTBFuV3oz7BouA', {
         statusCode: 201,
-        delay: 100,
         body: data
       })
     })
+
+    cy.fixture('sunData').then(results => {
+      cy.intercept('GET', 'https://api.sunrise-sunset.org/json?lat=36.83682216&lng=--107.9999245}&date=2021-08-11', {
+        statusCode: 201,
+        body: results
+      })
+    })
+
     cy.visit("http://localhost:3000")
 
         cy.get('path[data-name="NM"]').click()
@@ -45,6 +52,11 @@ describe('Park Details Page', () => {
 
   it('Should allow the user to add this to their future trips', () => {
     cy.get('button[class="add-trip"]').contains('Add to Future Trips!').click()
+  })
+
+  it('Should show the user a list of activities at that park', () => {
+    cy.get('section[class="activities]')
+      .get('p[class="other-activities]').contains('Other Activities in the Park')
   })
   
  
