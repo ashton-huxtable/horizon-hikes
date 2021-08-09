@@ -27,7 +27,7 @@ export const InfoCard = ({name, address, description, image}) => {
 
 InfoCard.propTypes = {
   name: PropTypes.string,
-  address: PropTypes.string,
+  address: PropTypes.object,
   description: PropTypes.string,
   image: PropTypes.object
 }
