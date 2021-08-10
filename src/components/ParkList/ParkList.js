@@ -2,7 +2,7 @@ import { ParkCard } from '../ParkCard/ParkCard';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './ParkList.css'
+import './Parklist.css'
 
 export const ParkList = ({parksByState}) => {
 
