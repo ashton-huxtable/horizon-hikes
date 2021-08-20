@@ -29,6 +29,8 @@ There are moments in life that bring peace and joy. A calm settles over the eart
   * cd into the repo
   * `npm start` to activate the server
   * Open localhost:3000 in your browser to view the project
+ 
+ **OR** view the deployed application via Heroku [here](https://horizon-hikes.herokuapp.com/)
   
 
 
