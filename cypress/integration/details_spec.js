@@ -43,15 +43,21 @@ describe('Park Details Page', () => {
 
   it('Should show the user a calendar to pick a date from and display sunrise and sunset times', () => {
     cy.get('div[class="react-calendar calendar"]')
-      .get('span').contains('August 2021')
-      .get('abbr').contains('11').click()
-      .get('p[class="selected-date"]').contains('Current selected date is: August 11th 2021')
+      .get('button').contains('»').click()
+      .get('button[class="react-calendar__navigation__label"]').click()
+      .get('abbr').contains('August').click()
+      .get('span').contains('August 2022')
+      .get('abbr').contains('17').click()
+      .get('p[class="selected-date"]').contains('Current selected date is: August 17th 2022')
   })
   
   it('Should show the user sunrise and sunset times for a given date at that park', () => {
-    cy.get('abbr').contains('11').click()
-      .get('h5').contains('Sunrise: 5:12:41 AM')
-      .get('h5').contains('Sunset: 6:57:40 PM')
+    cy.get('button').contains('»').click()
+      .get('button[class="react-calendar__navigation__label"]').click()
+      .get('abbr').contains('August').click()
+      .get('abbr').contains('17').click()
+      .get('h5').contains('Sunrise: 5:17:27 AM')
+      .get('h5').contains('Sunset: 6:50:42 PM')
   })
 
   it('Should allow the user to add this to their future trips', () => {
