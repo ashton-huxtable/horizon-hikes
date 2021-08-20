@@ -44,14 +44,14 @@ describe('Park Details Page', () => {
   it('Should show the user a calendar to pick a date from and display sunrise and sunset times', () => {
     cy.get('div[class="react-calendar calendar"]')
       .get('span').contains('August 2021')
-      .get('abbr').contains('28').click()
-      .get('p[class="selected-date"]').contains('Current selected date is: August 28th 2021')
+      .get('abbr').contains('31').click()
+      .get('p[class="selected-date"]').contains('Current selected date is: August 31st 2021')
   })
   
   it('Should show the user sunrise and sunset times for a given date at that park', () => {
-    cy.get('abbr').contains('11').click()
-      .get('h5').contains('Sunrise: 5:26:40 AM')
-      .get('h5').contains('Sunset: 6:35:39 PM')
+    cy.get('abbr').contains('31').click()
+      .get('h5').contains('Sunrise: 5:29:05 AM')
+      .get('h5').contains('Sunset: 6:31:23 PM')
   })
 
   it('Should allow the user to add this to their future trips', () => {
